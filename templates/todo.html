@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iris Cloud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='/img/favicon.ico') }}">
+  </head>
+  <body class="bg-white">
+    <!-- Navbar goes here -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <!-- Website Logo -->
+                        <a href="/" class="flex items-center py-4 px-2">
+                            <img src="{{ url_for('static', path='/img/logo.png') }}" alt="Logo" class="h-20 w-21">
+                            <!-- <span class="font-semibold text-gray-500 text-lg">Navigation</span> -->
+                        </a>
+                    </div>
+                    <!-- Primary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="/" class="py-4 px-2 text-[#868686] font-semibold hover:text-green-200 transition duration-300">Home</a>
+                        <a href="https://connect.iris.senseicloud.fr" class="py-4 px-2 text-[#868686] font-semibold hover:text-green-200 transition duration-300">Connect</a>
+                        <a href="/diagram" class="py-4 px-2 text-[#868686] font-semibold hover:text-green-200 transition duration-300">Diagram</a>
+                        <a href="https://status.iris.senseicloud.fr/status/iris-cloud" class="py-4 px-2 text-[#868686] font-semibold hover:text-green-200 transition duration-300">Status</a>
+                    </div>
+                </div>
+                <!-- Secondary Navbar items -->
+                <div class="hidden md:flex items-center space-x-3 ">
+                    <a href="/todo" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-[#868686] hover:text-white transition duration-300">Log In</a>
+                    <a href="/todo" class="py-2 px-2 font-medium text-white bg-[#868686] rounded hover:bg-green-200 transition duration-300">Sign Up</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                    <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                        x-show="!showMenu"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li><a href="/" class="block text-[#868686] px-2 py-4 hover:bg-green-200 transition duration-300">Home</a></li>
+                <li><a href="https://connect.iris.senseicloud.fr" class="block text-[#868686] px-2 py-4 hover:bg-green-200 transition duration-300">Connect</a></li>
+                <li><a href="/diagram" class="block text-[#868686] px-2 py-4 hover:bg-green-200 transition duration-300">Diagram</a></li>
+                <li><a href="https://status.iris.senseicloud.fr/status/iris-cloud" class="block text-[#868686] px-2 py-4 hover:bg-green-200 transition duration-300">Status</a></li>
+            </ul>
+        </div>
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
+    </nav>
+    <br>
+    <div class="w-11/12 mx-auto">
+        <div class="w-full shadow-2xl subpixel-antialiased rounded h-64 bg-black border-black mx-auto">
+          <div class="flex items-center h-6 rounded-t bg-gray-100 border-b border-gray-500 text-center text-black" id="headerTerminal">
+            <div class="flex ml-2 items-center text-center border-red-900 bg-red-500 shadow-inner rounded-full w-3 h-3" id="closebtn">
+            </div>
+            <div class="ml-2 border-yellow-900 bg-yellow-500 shadow-inner rounded-full w-3 h-3" id="minbtn">
+            </div>
+            <div class="ml-2 border-green-900 bg-green-500 shadow-inner rounded-full w-3 h-3" id="maxbtn">
+            </div>
+            <div class="mx-auto pr-16" id="terminaltitle">
+              <p class="text-center text-sm">Terminal</p>
+            </div>
+      
+          </div>
+          <div class="pl-1 pt-1 h-auto text-green-200 font-mono text-xs bg-black" id="console">
+            <br>
+            <p class="pb-1 text-center text-red-600">Error</p>
+            <br>
+            <p class="pb-1 text-center">This page is not done yet :(</p>
+            <br>
+            <p class="pb1 text-center"><a href="/">Go back home</a></p>
+          </div>
+        </div> 
+      </div>
+</body>
+<footer class="bg-white text-center shadow-inner text-3xl text-[#868686] fixed inset-x-0 bottom-0">
+    <div class="">
+        <a href="/todo" class="align-baseline text-lg text-[#868686]">More Informations</a>
+        <i class="align-baseline fa-brands fa-github fa-xs"></i>
+    </div>
+</footer>
+</html>
